@@ -38,11 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Checkout Dist File
-        uses: actions/checkout@v4
-        with:
-          path: packages/ctool-core/dist
-          ref: gh-pages
+      
 
       - name: Cache pnpm
         uses: actions/cache@v4
