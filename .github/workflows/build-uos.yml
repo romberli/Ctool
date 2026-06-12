@@ -37,11 +37,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      - name: Cache Rust
-        uses: Swatinem/rust-cache@v2
-        with:
-          workspaces: packages/ctool-adapter/tauri/src-tauri
-
       - name: Build Web Assets
         run: |
           pnpm install
@@ -51,6 +46,7 @@ jobs:
       - name: Build Tauri
         run: |
           cd packages/ctool-adapter/tauri
+          rm -rf src-tauri/Cargo.lock
           pnpm run init
           pnpm tauri build --target x86_64-unknown-linux-gnu
           ls -la src-tauri/target/release/bundle/
