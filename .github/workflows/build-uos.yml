@@ -53,10 +53,10 @@ jobs:
         with:
           workspaces: packages/ctool-adapter/tauri/src-tauri
 
-      - name: Initialize and Build
+      - name: Build Web Assets
         run: |
           pnpm install
-          pnpm run initialize
+          pnpm run build
           ls -la packages/ctool-core/dist
 
       - name: Build Tauri
