@@ -21,7 +21,7 @@ jobs:
           curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
           dnf install -y nodejs
           npm install -g pnpm@9
-          dnf install -y gcc gcc-c++ make pkgconfig libgtk3-devel webkit2gtk3-devel libappindicator-gtk3-devel librsvg2-devel openssl-devel patchelf file
+          dnf install -y gcc gcc-c++ make pkgconfig gtk3-devel webkit2gtk3-devel libappindicator-gtk3-devel librsvg2-devel openssl-devel patchelf file atk-devel cairo-devel gdk-pixbuf2-devel pango-devel
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
