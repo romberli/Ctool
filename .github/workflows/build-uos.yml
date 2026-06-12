@@ -17,6 +17,7 @@ jobs:
       - name: Install system dependencies
         run: |
           dnf install -y epel-release
+          dnf config-manager --set-enabled powertools
           dnf install -y curl wget gnupg2 ca-certificates git
           curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
           dnf install -y nodejs
